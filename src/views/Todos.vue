@@ -3,7 +3,8 @@
         <Header></Header>
         <router-link class="link" to="/">Home page</router-link>
         <AddTodo v-on:add-todo="addTodo"></AddTodo>
-        <Todos v-bind:todoList="todos" v-on:del-todo="deleteTodo"></Todos>
+        <Todos v-if="todos.length" v-bind:todoList="todos" v-on:del-todo="deleteTodo"></Todos>
+        <p v-else>No todos</p>
     </div>
 </template>
 
